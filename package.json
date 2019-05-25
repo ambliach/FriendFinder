@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/ambliach/FriendFinder#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^3.4.1",
     "express": "^4.17.0",
     "path": "^0.12.7"
   }
