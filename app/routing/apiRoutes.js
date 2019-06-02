@@ -6,7 +6,7 @@ module.exports = function (app) {
         res.json(friends)
     })
     app.post("/api/friends", function (req, res) {
-        //scoring the smallestdiff in an object along with name and photo
+        //storing the smallestdiff in an object along with name and photo
         //using nested for loop approach versus foreach, makes more sense to me
         var bestMatch = {
             name: "",
@@ -14,7 +14,7 @@ module.exports = function (app) {
             smallestDiff: 10000000
         };
         var UserResponse = req.body;
-        var userScore = userResponse.scores
+        var userScore = UserResponse.scores
         var totalDiff;
         //loop over all existing friends using nested loops
         for (var i =  0; i < friends.length; i++){
@@ -35,7 +35,7 @@ module.exports = function (app) {
             bestMatch.smallestDiff = totalDiff;
         }
         }
-        friends.push(userResponse)
+        friends.push(UserResponse)
         res.json(bestMatch)
     });
 };
